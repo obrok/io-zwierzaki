@@ -1,0 +1,76 @@
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\frenchspacing
+
+\title{Inżynieria oprogramowania\\zwierzaki.pl}
+\author{Marcin Nowak\\Paweł Obrok\\Paweł Pierzchała}
+\date{Kompilacja dokumentu: \today}
+ 
+\begin{document}
+\maketitle
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\section{Wizja}
+
+Celem portalu będzie zrzeszanie oraz usprawnienie akcji podejmowanych przez organizacje oraz wolantariuszy pomagających zwierzętom z całej Polski.
+
+\subsection{Zwierzęta}
+
+Głównym zadaniem portalu będzie katalogowanie bezdomnych zwierząt, pośrednictwo w ich adopacjach, zarówn wirtualnych jak i rzeczywistych oraz śledzenie ich losów. Na stronie każdego zwierzęcia będą się znajdowały podstawowe informacje, tzn.:
+\begin{enumerate}
+	\item dane (rasa, imię, namaszczenie)
+	\item obszar, w którym zwierzę aktualnie przebywa
+	\item informacje o wynikach ewentualnych badań weterynaryjnych i/lub chorobach
+	\item zdjęcia
+\end{enumerate}
+
+Poza tym każde zwierzę będzie posiadało swój "kalendarz zdarzeń". Będzie on mógł zawierać m.in.:
+\begin{enumerate}
+	\item orientacyjne daty narodzin/odnalezienia
+	\item daty wizyt u weterynarza
+	\item datę adopcji i rodzaj adopcji
+	\item datę ewentualnej zmiany miejsca zamieszkania (np. gdy zwierzę przeprowadzi się razem ze swoim nowym panem)
+	\item ewentualną datę śmierci
+\end{enumerate}
+
+\subsection{Adopcje}
+
+Rodzaje adopcji:
+\begin{enumerate}
+	\item adopcja wirtualna polega na zapewnieniu środków finansowych na utrzymanie zwierzęcia, np. operacje na które schronisko nie ma funduszy
+	\item rzeczywiste polegające na zabraniu zwierzęciu do domu
+\end{enumerate}
+
+\subsection{Użytkownicy}
+
+\subsubsection{Wolontariusze}
+Zdecydowaną większość użytkowników portalu będą stanowili wolontariusze. Będą oni mogli dodawać informacje zwierzętach (zarówno odnalezionych jak i znajdujących się w bazie), zdjęcia oraz wydarzenia w kalendarzu. Wszyscy wolonatariusze portalu będą mogli dokonowayć adopcji. Wiele osób opiekujących się zwierzętami nie korzysta z internetu, dlatego wolontariusze powinni mieć możliwość pośrednicznia w takich adopcjach.
+ 
+\subsubsection{Organizacje}
+Swoje profile na zwierzaki.pl będą miały organizacje pomagające bezdomnym zwierzętom (np. schroniska). Na stronach organizacji będą znajdowały się m.in.:
+\begin{enumerate}
+	\item profil działalności wraz z opisem
+	\item lokalizacja
+	\item historia przeprowadzanych adopcji
+	\item informacje o nadchodzących wydarzeniach (np. zbiórka jedzenia czy zabawek dla schroniska, spotkanie z dyskusją na temat zwierząt, spotkania w szkołach)
+\end{enumerate}
+
+\subsubsection{Weterynarze}
+Specjalne profile będą mogli zakładać weterynarze. Na swoich stronach będą zamieszczać 
+informacje o przychodni oraz zaznaczać, którymi zwierzętami się opiekują. Tylko weterynarze 
+i upoważnieni przez nich wolontariusze będą mogli edytować status choroby zwierzęcia oraz 
+dodawać informacje o leczeniu do kalendarza.
+
+\subsection{Mapy}
+Ze względu na to, że aktywność użytkowników jest ściśle związane z obszarem, w którym się oni znajdują, portal będzie zawierał mapy. Na mapach będą zaznaczone "punkty przyjazne dla zwierzaków" czyli m.in. schroniska, przychodnie weterynaryjne, siedziby organizacji. Poza tym będzie można zaznaczać orientacyjne obszary, w których znajdują się określone zwierzęta.
+
+\end{document}
