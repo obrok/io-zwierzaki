@@ -1,13 +1,12 @@
-
 \documentclass[10pt,a4paper]{article}
-
+ 
 \usepackage[polish]{babel}
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \frenchspacing
-
+ 
 \title{Inżynieria oprogramowania\\zwierzaki.pl}
 \author{Marcin Nowak\\Paweł Obrok\\Paweł Pierzchała}
 \date{Kompilacja dokumentu: \today}
@@ -15,62 +14,298 @@
 \begin{document}
 \maketitle
 \clearpage
-
+ 
 \tableofcontents
 \clearpage
-
+ 
 \section{Wizja}
-
+ 
 Celem portalu będzie zrzeszanie oraz usprawnienie akcji podejmowanych przez organizacje oraz wolantariuszy pomagających zwierzętom z całej Polski.
-
+ 
 \subsection{Zwierzęta}
-
-Głównym zadaniem portalu będzie katalogowanie bezdomnych zwierząt, pośrednictwo w ich adopacjach, zarówn wirtualnych jak i rzeczywistych oraz śledzenie ich losów. Na stronie każdego zwierzęcia będą się znajdowały podstawowe informacje, tzn.:
+\subsubsection{Informacje}
+Głównym zadaniem portalu będzie katalogowanie bezdomnych zwierząt, pośrednictwo w ich adopacjach, zarówno wirtualnych jak i rzeczywistych, oraz śledzenie ich losów. Na stronie każdego zwierzęcia będą się znajdowały podstawowe informacje, tzn.:
 \begin{enumerate}
-	\item dane (rasa, imię, namaszczenie)
+	\item rodzaj (kot/pies/inne)
+	\item dane (rasa, imię, kolor)
+	\item czy żyje
+	\item jest dzikie, do adopcji lub zaadoptowane
+	\item czy zwierzę jest agresywne
 	\item obszar, w którym zwierzę aktualnie przebywa
+	\item stan zdrowia
 	\item informacje o wynikach ewentualnych badań weterynaryjnych i/lub chorobach
 	\item zdjęcia
 \end{enumerate}
-
-Poza tym każde zwierzę będzie posiadało swój "kalendarz zdarzeń". Będzie on mógł zawierać m.in.:
+\subsubsection{Kalendarz zdarzeń}
+\label{s_kalendarz_zdarzen}
+Poza tym każde zwierzę będzie posiadało swój \emph{kalendarz zdarzeń}. Będzie on podzielony na sekcję publiczną i prywatną (do wglądu opiekuna, organizacji i weterynarza). Część publiczna będzie mogła zawierać m.in.:
 \begin{enumerate}
 	\item orientacyjne daty narodzin/odnalezienia
+	\item od kiedy szuka domu
 	\item daty wizyt u weterynarza
 	\item datę adopcji i rodzaj adopcji
 	\item datę ewentualnej zmiany miejsca zamieszkania (np. gdy zwierzę przeprowadzi się razem ze swoim nowym panem)
 	\item ewentualną datę śmierci
+	\item inne dowolne zdarzenia opisowe
 \end{enumerate}
-
-\subsection{Adopcje}
-
-Rodzaje adopcji:
+Część prywatna natomiast:
 \begin{enumerate}
-	\item adopcja wirtualna polega na zapewnieniu środków finansowych na utrzymanie zwierzęcia, np. operacje na które schronisko nie ma funduszy
-	\item rzeczywiste polegające na zabraniu zwierzęciu do domu
+	\item informacje o wyjeździe do weterynarza
+	\item koszt wizyty
+	\item wyniki badań
+	\item daty przyszłych, umówionych wizyt
+	\item inne dowolne zdarzenia opisowe, jak w części publicznej
 \end{enumerate}
+\subsubsection{Łączenie profili}
+Będzie możliwe \emph{łączenie} profili zwierząt, jeśli po jakimś czasie ktoś zorientuje się, że dwa profile zawierają informacje o tym samym zwierzęciu (np. ktoś traci kontakt ze zwierzęciem, ktoś inny odnajduje je miesiąc później i zakłada mu nowy profil).
+\subsubsection{Pomoc}
+Będzie możliwe oznaczenie profilu zwierzęcia \emph{pilnie potrzebuje pomocy} np. po wypadku lub odnalezieniu w ciężkim stanie.
 
+\subsubsection{Wyszukiwanie/katalogowanie}
+Użytkownicy będą mogli wyszukiwać zwierzęta ze względu na wszystkie kryteria podane w profilu. Poza tym będzie dostępny katalog zwierząt (z kategoriami np. psy $\rightarrow$ potrzebujące pomocy).
+ 
+\subsection{Adopcje}
+Będą możliwe dwa rodzaje adopcji:
+ 
+
+\subsubsection{Wirtualne}
+Adopcja wirtualna --- polega na zapewnieniu środków finansowych na utrzymanie zwierzęcia, np. operacje na które schronisko nie ma funduszy. Osoba, która \emph{wirtualnie adoptuje} jakiegoś zwierzaka, będzie dostawała aktualne informacje o nim i jego zdjęcia. Wolontariusz lub pracownik schroniska będzie miał możliwość zrobienia kilku/kilkunastu zdjęć i konfiguracji częstości ich wysyłania do użytkownika. Poza tym, wolontariusz lub pracownik schroniska będzie miał możliwość ustawienia \emph{przypominajki}, która będzie notyfikowała o konieczności wysłania zdjęcia lub newsa do użytkownika, który zaadoptował danego zwierzaka.
+\subsubsection{Rzeczywiste}
+Adopcje rzeczywiste polegające na zabraniu zwierzęcia do domu. Na profilu zwierzaka będzie informacja o tym, kto go zaadoptował (np. nazwa użytkownika) i dane tej osoby (nie publiczne, tylko do wglądu wolontariusza lub organizacji opiekującej się wcześniej danym zwierzakiem).
+ 
 \subsection{Użytkownicy}
 
+\subsubsection{Internauci}
+Internauci będą mogli wyszukiwać i przeglądać profile zwierząt. Będą mogli adoptować zwierzęta:
+\begin{enumerate}
+	\item wirtualnie --- wtedy będą otrzymywali newsy i zdjęcia zwierzaka
+	\item rzeczywiście --- wtedy zabiorą zwierzaka do siebie
+\end{enumerate}
+Poza tym internauci będą mogli przeglądać profile organizacji i weterynarzy. Będą też mieli możliwość zostania wolontariuszami. Mogą też zadawać pytania o zwierzęta oraz zgłaszać informacje o znalezionych zwierzętach.
+ 
 \subsubsection{Wolontariusze}
-Zdecydowaną większość użytkowników portalu będą stanowili wolontariusze. Będą oni mogli dodawać informacje zwierzętach (zarówno odnalezionych jak i znajdujących się w bazie), zdjęcia oraz wydarzenia w kalendarzu. Wszyscy wolonatariusze portalu będą mogli dokonowayć adopcji. Wiele osób opiekujących się zwierzętami nie korzysta z internetu, dlatego wolontariusze powinni mieć możliwość pośrednicznia w takich adopcjach.
+Użytkownikami portalu będą również wolontariusze. Będą oni mogli dodawać informacje zwierzętach (zarówno odnalezionych jak i znajdujących się w bazie), zdjęcia oraz wydarzenia w kalendarzu. Wszyscy wolonatariusze portalu będą mogli dokonowayć adopcji. Wiele osób opiekujących się zwierzętami nie korzysta z internetu, dlatego wolontariusze powinni mieć możliwość pośrednicznia w takich adopcjach.
  
 \subsubsection{Organizacje}
 Swoje profile na zwierzaki.pl będą miały organizacje pomagające bezdomnym zwierzętom (np. schroniska). Na stronach organizacji będą znajdowały się m.in.:
 \begin{enumerate}
 	\item profil działalności wraz z opisem
-	\item lokalizacja
+	\item lokalizacja (adres)
 	\item historia przeprowadzanych adopcji
 	\item informacje o nadchodzących wydarzeniach (np. zbiórka jedzenia czy zabawek dla schroniska, spotkanie z dyskusją na temat zwierząt, spotkania w szkołach)
+	\item aktualności
+	\item informacje o tym, w jaki sposób można zostać sponsorem organizacji
+	\item informacje o tym, w jaki sposób można przeznaczyć 1\% podatku na rzecz danej organizacji
 \end{enumerate}
 
+Pracownicy organizacji będą mogli przydzielać zwierzęta weterynarzom (żeby weterynarze nie musieli sami ich wyszukiwać).
+ 
 \subsubsection{Weterynarze}
-Specjalne profile będą mogli zakładać weterynarze. Na swoich stronach będą zamieszczać 
-informacje o przychodni oraz zaznaczać, którymi zwierzętami się opiekują. Tylko weterynarze 
-i upoważnieni przez nich wolontariusze będą mogli edytować status choroby zwierzęcia oraz 
-dodawać informacje o leczeniu do kalendarza.
+Specjalne profile będą mogli zakładać weterynarze. Na swoich stronach będą zamieszczać informacje o przychodni. Będą tam też widoczne zwierzęta, którymi się opiekują (dodane przez wolontariuszy lub organizacje). Tylko weterynarze i upoważnieni przez nich wolontariusze będą mogli edytować status choroby zwierzęcia oraz dodawać informacje o leczeniu do kalendarza (również wydarzenia prywatne).
 
+Weterynarze będą mogli reklamować swoje gabinety banerami.
+
+\subsubsection{Sponsorzy}
+Specjalne podstrony będą mogli zakładać sponsorzy. Będą mogli oni opisywać, w jaki sposób pomogli danej organizacji. W zamian za pomoc będą mogli też zamieszczać banery reklamowe w różnych miejscach strony.
+ 
 \subsection{Mapy}
-Ze względu na to, że aktywność użytkowników jest ściśle związane z obszarem, w którym się oni znajdują, portal będzie zawierał mapy. Na mapach będą zaznaczone "punkty przyjazne dla zwierzaków" czyli m.in. schroniska, przychodnie weterynaryjne, siedziby organizacji. Poza tym będzie można zaznaczać orientacyjne obszary, w których znajdują się określone zwierzęta.
+Ze względu na to, że aktywność użytkowników jest ściśle związane z obszarem, w którym się oni znajdują, portal będzie zawierał mapy. Na mapach będą zaznaczone \emph{punkty przyjazne dla zwierzaków} czyli m.in. schroniska, przychodnie weterynaryjne, siedziby organizacji. Poza tym będzie można zaznaczać orientacyjne obszary, w których znajdują się określone zwierzęta.
+
+\section{Funkcjonalność}
+\subsection{Aktorzy}
+\subsubsection{Internauta}
+Osoba przeglądająca portal, niezalogowana. Ma dostęp tylko do publicznych informacji zawartych w systemie.
+\subsubsection{Wolontariusz}
+Wolontariusz posiada konto w systemie. Może edytować inforamcje związane ze zwierzętami przypisanymi do jego organizacji.
+\subsubsection{Organizacja}
+Organizacja pomagająca zwierzętom. Może zakładać/usuwać konta wolontariuszy, edytować wszystkie inforamcje o przypisanych do niej zwierzętach. Możliwe jest umieszczenie informacji adresowych/promocyjnych o organizacji.
+\subsubsection{Weterynarz}
+Weterynarz ma dostęp do informacji o zwierzętach, które przeypisała do niego organizacja, może je także edytować. Weterynarz może umieścić informacje promocyjne o swojej przychodni.
+\subsubsection{Sponsor}
+Sponsorzy nie mogą edytować danych żadnych zwierzaków. Mogą umieszczać materiały reklamowe oraz opisywać w jaki sposób pomogli danej organizacji.
+\subsubsection{Administrator}
+Dba o poprawność danych dostarczanych przez organizacje.
+\subsection{Przypadki użycia}
+\subsubsection{Rejestracja organizacji}
+\begin{itemize}
+	\item \emph{Aktor główny:} Organizacja
+	\item \emph{Zakres:} cały system
+	\item \emph{Poziom:} cel użytkownika
+	\item \emph{Uczestnicy i interesy:} 
+		Organizacja --- zakłada konto w systemie, aby móc z niego korzystać\\
+		Administrator --- weryfikuje informacje podane przez Organizację
+	\item \emph{Warunek początkowy:} brak
+	\item \emph{Minimalna gwarancja:} Informacja dla Administratora o prośbie o założenie konta
+	\item \emph{Gwarancja powodzenia:} Założenie aktywnego konta w systemie
+	\item \emph{Scenariusz}
+	\begin{enumerate}
+		\item Organizacja podaje informacje teleadresowe, zakres działalności
+		\item Administrator weryfikuje informacje
+		\begin{enumerate}
+			\item Informacje są niepoprawne
+			\item Organizacja otrzymuje prośbę o uzupełnienie informacji
+		\end{enumerate}
+		\item Organizacja otrzymuje konto w systemie
+	\end{enumerate}
+\end{itemize}
+
+\subsubsection{Rejestracja użytkownika}
+\begin{itemize}
+	\item \emph{Aktor główny:} Organizacja
+	\item \emph{Zakres:} organizacja
+	\item \emph{Poziom:} cel użytkownika
+	\item \emph{Uczestnicy i interesy:} \\
+		Organizacja --- zakłada konto dla Wolontariusza/Weterynarza/Sponsora w systemie\\
+		Wolontariusz/Weterynarz/Sponsor --- otrzymuje konto w systemie
+	\item \emph{Warunek początkowy:} posiadanie konta w systemie przez Organizację
+	\item \emph{Minimalna gwarancja:} brak
+	\item \emph{Gwarancja powodzenia:} Założenie konta w systemie
+\end{itemize}
+
+\subsubsection{Logowanie}
+\begin{itemize}
+	\item \emph{Aktor główny:} Organizacja/Wolontariusz/Weterynarz/Sponsor
+	\item \emph{Zakres:} organizacja
+	\item \emph{Poziom:} cel użytkownika
+	\item \emph{Uczestnicy i interesy:} \\
+		Wolontariusz/Weterynarz/Sponsor/Organizacja --- potwierdza swoje uprawnienia do działań w systemie
+	\item \emph{Warunek początkowy:} posiadanie konta w systemie przez Organizację/ Wolontariusza/ Weterynarza/ Sponsora
+	\item \emph{Minimalna gwarancja:} informacja o niepoprawnych danych logowania
+	\item \emph{Gwarancja powodzenia:} autoryzacja w systemie
+\end{itemize}
+
+\subsubsection{CRUD Zwierzaków}
+\begin{itemize}
+	\item \emph{Aktor główny:} Organizacja/Wolontariusz/Weterynarz
+	\item \emph{Zakres:} organizacja
+	\item \emph{Poziom:} cel użytkownika
+	\item \emph{Uczestnicy i interesy:} 
+		Organizacja/Wolontariusz/Weterynarz --- dodaje aktualne informacje o zwierzaku
+	\item \emph{Warunek początkowy:} użytkownik jest zaautoryzowany
+	\item \emph{Minimalna gwarancja:} informacja o błędzie
+	\item \emph{Gwarancja powodzenia:} uaktualnienie informacji o zwierzęciu
+	\item \emph{Scenariusz}
+	\begin{enumerate}
+		\item Użytkownik podaje aktualne informacje o zwierzęciu (tyczy się to również dodawania zwierząt).
+		\item Weryfikowane są uprawnienia Użytkownika do wykonania danej akcji
+		\begin{enumerate}
+			\item Organizacja może dodawać informacje o nowych zwierzętach, aktualizować dane dowolnego zwierzęcia przypisanego do niej
+			\item Wolontariusz może zmieniać tylko aktualizować dane zwierzęcia
+			\item Weterynarz może zmieniać informacje o stanie zdrowia zwierzęcia
+			\item Nie ma możliwości usuwania zwierzaka z systemu. Co najwyżej można dodać zdarzenie śmierci zwierzaka.
+		\end{enumerate}
+		\item Informacje są niepoprawne
+		\begin{enumerate}
+			\item Użytkownik widzi komunikat o niepowodzeniu i jego przyczynie.
+			\item Użytkownik może ponownie spróbować zmienić informacje.
+		\end{enumerate}
+		\item Dane zwierzaka są aktualizowane (zwierzak jest dodawany do systemu).
+	\end{enumerate}
+\end{itemize}
+
+\subsubsection{Dodawanie zdarzenia}
+\begin{itemize}
+	\item \emph{Aktor główny:} Wolontariusz/Weterynarz
+	\item \emph{Zakres:} zwierzę
+	\item \emph{Poziom:} cel użytkownika
+	\item \emph{Uczestnicy i interesy:} 
+		Wolontariusz/Weterynarz --- dodaje informacje o historii zwierzęcia
+	\item \emph{Warunek początkowy:} użytkownik jest zaautoryzowany
+	\item \emph{Minimalna gwarancja:} informacja o błędzie
+	\item \emph{Gwarancja powodzenia:} uaktualnienie informacji o historii zwierzęcia
+	\item \emph{Scenariusz}
+	\begin{enumerate}
+		\item Użytkownik wybiera rodzaj zdarzenia (patrz \ref{s_kalendarz_zdarzen}).
+		\item Użytkownik dostarcza ewentualnie inne informacje związane ze zdarzeniem.
+		\item Możliwe jest wskazanie lokalizacji wydarzenia na mapie.
+		\item Użytkownik ustala widoczność zdarzenia (prywatne, publiczne)
+		\item Zdarzenie jest dodawane do historii zwierzaka.
+	\end{enumerate}
+\end{itemize}
+
+\subsubsection{Wyszukiwanie}
+\label{s_wyszukiwanie}
+\begin{itemize}
+	\item \emph{Aktor główny:} Internauta
+	\item \emph{Zakres:} cały system
+	\item \emph{Poziom:} cel użytkownika
+	\item \emph{Uczestnicy i interesy:} 
+		Internauta --- wyszukuje zwierzaka
+	\item \emph{Warunek początkowy:} brak
+	\item \emph{Minimalna gwarancja:} informacja o braku zwierząt odpowiadających danym kryteriom
+	\item \emph{Gwarancja powodzenia:} wyświetlenie listy zwierzą odpowiadających danym kryteriom
+	\item \emph{Scenariusz}
+	\begin{enumerate}
+		\item Użytkownik podaje kryteria wyszukiwania.\\
+		Możliwe kryteria wyszukiwania
+		\begin{enumerate}
+			\item Rasa
+			\item Wiek
+			\item Płeć
+			\item Lokalizacja
+			\item Możliwość adpocji
+			\item Umaszczenie
+		\end{enumerate}	
+		\item Wyświetlana jest lista zwierząt odpowiadających podanym kryteriom
+		\begin{enumerate}
+			\item Brak zwierząt odpowiadających kryteriom
+			\item Użytkownik widzi komunikat o niepowodzeniu
+		\end{enumerate}
+	\end{enumerate}
+\end{itemize}
+
+
+\subsubsection{Adopcja wirtualna}
+\begin{itemize}
+	\item \emph{Aktor główny:} Internauta
+	\item \emph{Zakres:} zwierzę
+	\item \emph{Poziom:} cel użytkownika
+	\item \emph{Uczestnicy i interesy:} 
+		Internauta --- zgadza się sponsorować zwierzaka
+	\item \emph{Warunek początkowy:} brak
+	\item \emph{Minimalna gwarancja:} brak
+	\item \emph{Gwarancja powodzenia:} dodanie informacji o adpocji wraz z danymi kontaktowymi osoby adoptującej
+	\item \emph{Scenariusz}
+	\begin{enumerate}
+		\item Użytkownik wyszukuje (\ref{s_wyszukiwanie}) odpowiadającego mu zwierzaka
+		\item Użytkownik zgłasza chęć wirtualnej adpocji
+		\item Organizacja przekazuje użytkownikowi niezbędne dokumenty oraz numer konta, na który należy dokonywać wpłat
+		\item Po potwierdzeniu płatności przez użytkownika dopisywany jest on jako opiekun zwierzęcia
+	\end{enumerate}
+\end{itemize}
+
+\subsubsection{Adopcja}
+\begin{itemize}
+	\item \emph{Aktor główny:} Internauta
+	\item \emph{Zakres:} zwierzę
+	\item \emph{Poziom:} cel użytkownika
+	\item \emph{Uczestnicy i interesy:} 
+		Internauta --- chce przygarnąć zwierzaka
+	\item \emph{Warunek początkowy:} brak
+	\item \emph{Minimalna gwarancja:} brak
+	\item \emph{Gwarancja powodzenia:} dodanie informacji o adpocji wraz z danymi kontaktowymi osoby adoptującej
+	\item \emph{Scenariusz}
+	\begin{enumerate}
+		\item Użytkownik wyszukuje (\ref{s_wyszukiwanie}) odpowiadającego mu zwierzaka
+		\item Użytkownik zgłasza chęć adpocji
+		\item Organizacja przekazuje użytkownikowi niezbędne dokumenty oraz informacje o miejscu odbioru zwierzaka
+		\item Po odebraniu zwierzęcia dodawane są informacje adresowe adoptującego na potrzeby przyszłych kontroli prze Ministerstwo Ochrony Biednych Zwierząt.
+	\end{enumerate}
+\end{itemize}
+
+\subsubsection{Przeglądanie mapy}
+\begin{itemize}
+	\item \emph{Aktor główny:} Internauta
+	\item \emph{Zakres:} cały system
+	\item \emph{Poziom:} cel użytkownika
+	\item \emph{Uczestnicy i interesy:} 
+		Internauta --- przegląda informacje związane z pewnym rejonem
+	\item \emph{Warunek początkowy:} brak
+	\item \emph{Minimalna gwarancja:} wyświetlenie mapy rejonu
+	\item \emph{Gwarancja powodzenia:} wyświetlenie mapy rejonu wraz z informacjami o zwierzętach i zdarzeniach
+\end{itemize}
+
+\subsection{Testy akceptacyjne}
+Testy akceptacyjne systemu powinny odtwarzać wyżej opisane przypadki użycia. Funkcjonalość systemu nie jest bardzo rozbudowana i scenariusze przypadków użycia opisują ją dość dokładnie.
 
 \end{document}
